@@ -1,0 +1,632 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+.container {
+    display: none;
+}
+
+.main-screen {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    z-index: 100;
+    /* background: radial-gradient(circle, rgba(59, 0, 99, 0) 0%, rgba(59, 0, 99, 0.459)); */
+}
+
+.characters-block-header>p {
+    text-align: center;
+    color: #ededed;
+    line-height: 24px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.characters-list {
+    display: none;
+    position: absolute;
+    width: 22%;
+    height: auto;
+    left: 14%;
+    top: -40%;
+    overflow: visible !important;
+    border-radius: .10vh;
+    padding: 30px;
+}
+
+.character-list-header {
+    text-transform: uppercase;
+    position: relative;
+    top: -2vh;
+    width: 100%;
+    height: 10%;
+    right: 0;
+}
+
+.character-list-header>p {
+    text-align: center;
+    font-size: 2vh;
+    margin-top: 3.1vh;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: .1vh;
+    font-weight: 900;
+    color: #ededed;
+}
+
+.character {
+    position: relative;
+    width: 100%;
+    height: 75px;
+    margin-top: 15px;
+    /* border: 2px solid #09b99c; */
+    font-family: 'Bebas Neue', cursive;
+    background-color: #000000;
+    /* box-shadow: 0px 0px 10px #18e7c5a2, 0px 0px 20px #18e7c5a2, 0px 0px 40px #18e7c5a2; */
+    /* border-left: 5px solid #09b99c; */
+    transition: .1s linear;
+    border-radius: .10vh;
+    cursor: pointer;
+}
+
+.character:hover {
+    background-color: #000000;
+    /* border: 1px solid #09b99c; */
+    /* background-color: #09b99c; */
+    /* box-shadow: 0px 0px 10px #18e7c5a2, 0px 0px 20px #18e7c5a2, 0px 0px 40px #18e7c5a2; */
+    /* transition: .1s linear; */
+}
+
+.character>span {
+    color: #ededed;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .1vh;
+    font-family: 'Bebas Neue', cursive;
+}
+
+#cid {
+    color: #ededed;
+    position: relative;
+    float: right;
+    font-size: 1.5vh;
+    right: 35px;
+    line-height: 80px;
+}
+
+.char-selected {
+    /* background-color: #09b99c; */
+    border: 2px solid #09b99c;
+    /* box-shadow: 0px 0px 10px #18e7c5a2, 0px 0px 20px #18e7c5a2, 0px 0px 40px #18e7c5a2; */
+}
+
+.disabled {
+    background-color: rgba(0, 0, 0, 0.691);
+}
+
+#slot-name {
+    position: relative;
+    color: #ededed;
+    font-size: 17px;
+    line-height: 80px;
+    left: 20px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.character-btn {
+    position: relative;
+    width: 100%;
+    height: 5.0vh;
+    top: 65%;
+    transition: 0.2s;
+    float: left;
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.character-btn>p {
+    color: #ededed;
+    letter-spacing: .1vh;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2vh;
+    text-transform: uppercase;
+    line-height: 5vh;
+    font-weight: bold;
+}
+
+#play {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.829);
+    /* border: 2px solid #09b99c; */
+    transition: all 0.2s ease;
+}
+
+#play:hover {
+    background-color: rgba(0, 0, 0, 0.829);
+    border: 2px solid #09b99c;
+}
+
+#delete {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.829);
+    /* border: 2px solid #09b99c; */
+    transition: all 0.2s ease;
+}
+
+#delete:hover {
+    background-color: rgba(0, 0, 0, 0.829);
+    border: 2px solid #09b99c;
+}
+
+.character-info {
+    display: none;
+    position: absolute;
+    width: 15%;
+    height: 25%;
+    right: 14%;
+    top: -80%;
+    /* border-radius: 20px; */
+    border: 2px solid #09b99c;
+    background-color: rgba(0, 0, 0, 0.829);
+    padding: 30px;
+    /* border: 3px solid #09b99c; */
+    overflow: visible !important;
+}
+
+.character-info:hover {
+    /* background-color: #09b99c; */
+    /* border-left: 3px solid #ffffff; */
+}
+
+#char-info-icon {
+    position: relative;
+    font-size: 1.5vh;
+    color: #ededed;
+    right: 20px;
+    overflow: visible !important;
+}
+
+#char-info-titel {
+    text-transform: uppercase;
+    position: absolute;
+    font-size: 2vh;
+    color: #ededed;
+    left: -5vh;
+    letter-spacing: .1vh;
+    font-weight: 900;
+    overflow: visible !important;
+}
+
+#no-char {
+    position: absolute;
+    color: #ededed;
+    font-size: 16px;
+    top: 30%;
+    text-align: center;
+}
+
+.char-info-titel {
+    position: relative;
+    left: 28%;
+    top: 3%;
+    overflow: visible !important;
+}
+
+.character-info-valid {
+    position: relative;
+    top: 15%;
+    overflow: visible !important;
+}
+
+.character-info-box {
+    position: relative;
+    color: #ededed;
+    font-size: 2.0vh;
+    width: 100%;
+    height: 2.9vh;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.char-info-js {
+    position: absolute;
+    left: 10%;
+}
+
+#info-label {
+    margin-left: 10px;
+}
+
+.character-delete {
+    display: none;
+    position: absolute;
+    width: 33vh;
+    height: 12vh;
+    top: 67vh;
+    left: 86.5vh;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(0, 0, 0, 0.829);
+    border: 2px solid #09b99c;
+    /* border-radius: .8vh; */
+    padding: 30px;
+    font-family: 'Bebas Neue', cursive;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    color: #ededed;
+    font-family: 'Bebas Neue', cursive;
+    overflow: visible !important;
+}
+
+.characters-delete-block-header {
+    position: absolute;
+    width: 100%;
+    height: 11%;
+    color: #ededed;
+    text-align: left;
+    font-size: 2vh;
+    line-height: 29px;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 900;
+    text-transform: uppercase;
+    overflow: visible !important;
+}
+
+.characters-delete-block-header>p {
+    font-family: 'Bebas Neue', cursive;
+    overflow: visible !important;
+}
+
+.character-delete>p {
+    padding-top: 50px;
+    font-size: 1.3vh;
+    overflow: visible !important;
+}
+
+#yeet {
+    overflow: visible !important;
+}
+
+.character-acceptdel-btn {
+    position: absolute;
+    width: 43%;
+    height: 19%;
+    bottom: 0;
+    left: 5%;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.829);
+    border: 2px solid #09b99c;
+    transition: 0.2s;
+    overflow: visible !important;
+    cursor: pointer;
+}
+
+
+.character-canceldel-btn {
+    position: absolute;
+    width: 43%;
+    height: 19%;
+    bottom: 0;
+    right: 5%;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.829);
+    border: 2px solid #09b99c;
+    transition: 0.2s;
+    overflow: visible !important;
+    cursor: pointer;
+}
+
+.character-acceptdel-btn>p {
+    color: #ededed;
+    text-align: center;
+    padding-top: 1vh;
+    font-family: 'Bebas Neue', cursive;
+    overflow: visible !important;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.character-canceldel-btn>p {
+    color: #ededed;
+    text-align: center;
+    padding-top: 1vh;
+    font-family: 'Bebas Neue', cursive;
+    overflow: visible !important;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.character-register {
+    display: none;
+    position: relative;
+    width: 25%;
+    height: 32%;
+    top: 125%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 32px;
+    background-color: rgba(0, 0, 0, 0.829);
+    border: 2px solid #09b99c;
+    transition: .2s linear;
+    border-radius: .10vh;
+    padding: 30px;
+    font-family: 'Bebas Neue', cursive;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.829);
+}
+
+
+
+.characters-register-block-header {
+    text-transform: uppercase;
+    position: absolute;
+    width: 100%;
+    height: 12vh;
+    color: #ededed;
+    font-size: 2vh;
+    font-weight: 900;
+    margin-top: -1.3vh;
+}
+
+
+.new-character-image {
+    max-height: 35vh;
+    margin-left: 8%;
+}
+
+
+
+.char-register-inputs {
+    position: absolute;
+    top: 14%;
+    overflow: visible !important;
+}
+
+.char-reg-input {
+    position: relative;
+    float: left;
+    margin-top: 1vh;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    width: 92%;
+    height: 3vh;
+    color: #ededed;
+    max-width: 100%;
+    font-weight: 900;
+    padding: 4px;
+    border-radius: .3vh;
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.char-reg-input:hover {
+    background-color: #000000;
+}
+
+.char-reg-input:focus {
+    background-color: rgba(0, 0, 0, 0.829);
+    border-bottom: 1px solid #09b99c;
+}
+
+select {
+    position: absolute;
+    border: none;
+    background-color: #00000000;
+    outline: none;
+    width: 93.5%;
+    height: 4vh;
+    top: 19.9vh;
+    left: .1vh;
+    color: #ededed;
+    max-width: 100%;
+    padding: 4px;
+    border-radius: .3vh;
+    font-family: 'Bebas Neue', cursive;
+    text-align-last: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    transition: all 0.2s ease-in-out;
+}
+
+select:hover {
+    background-color: rgba(0, 0, 0, 0.829);
+}
+
+select:focus {
+    background-color: rgba(0, 0, 0, 0.829);
+    border: 1px solid #09b99c;
+}
+
+#gender option {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+select::placeholder {
+    text-align: center;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.char-reg-input::placeholder {
+    color: rgba(255, 255, 255, 0.52);
+}
+
+input[type="date"] {
+    color: #ededed;
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator{
+    display: none;
+}
+
+input[type=date]::-webkit-inner-spin-button, 
+input[type=date]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type="date"]::-webkit-input-placeholder{ 
+    visibility: hidden !important;
+}
+
+input[type="date"]::-webkit-clear-button {
+    display: none;
+}
+
+#birthdate {
+    color: #ededed;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.character-reg-btn2 {
+    position: absolute;
+    width: auto;
+    max-width: 40%;
+    height: 36px;
+    background-color: #47688a00;
+    /* border-radius: 5px; */
+    bottom: 5%;
+    margin: 0 auto;
+    left: 0;
+    right: 40%;
+}
+
+.character-reg-btn2:hover {
+    /* background-color: rgba(0, 0, 0, 0.829); */
+    border: 2px solid #09b99c;
+}
+
+.character-reg-btn2 > p {
+    text-align: center;
+    line-height: 34px;
+    color: #ededed;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 13px;
+}
+
+
+
+.character-return-btn2 {
+    position: absolute;
+    width: auto;
+    max-width: 40%;
+    height: 36px;
+    background-color: #47688a00;
+    /* border-radius: 5px; */
+    bottom: 5%;
+    margin: 0 auto;
+    left: 40%;
+    right: 0;
+}
+
+.character-return-btn2:hover {
+    /* background-color: rgba(0, 0, 0, 0.829); */
+    border: 2px solid #09b99c;
+}
+
+.character-return-btn2 > p {
+    text-align: center;
+    line-height: 34px;
+    color: #ededed;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 13px;
+}
+
+
+
+
+
+.character-reg-btn {
+    position: absolute;
+    width: auto;
+    max-width: 50%;
+    height: 36px;
+    background-color: #38d419;
+    border-radius: 5px;
+    bottom: 5%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+.character-reg-btn:hover {
+    background-color: rgb(120, 241, 120);
+}
+
+.character-reg-btn > p {
+    text-align: center;
+    line-height: 34px;
+    color: #ededed;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 13px;
+}
+
+.loading-rondje {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    transform: translateY(-50%);
+    text-align: center;
+    padding: 1vh;
+}
+
+.loading-rondje > p {
+    color: white;
+    margin-top: 1vh;
+    font-family: 'Bebas Neue', cursive;
+    text-shadow: 1px 1px 0px #00000085;
+}
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
