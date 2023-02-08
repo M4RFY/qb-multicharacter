@@ -11,8 +11,10 @@ Redesign of Original QBCore-Multicharacter.
 * Drag source files into your resources folder
 * Rename folder to `qb-inventory`
 
-# Preview
 ![qb-multicharacter]https://cdn.discordapp.com/attachments/1003822642379374703/1072843845835952199/1st.png
+![qb-multicharacter]https://cdn.discordapp.com/attachments/1003822642379374703/1072843858217554042/2nd.png
+![qb-multicharacter]https://cdn.discordapp.com/attachments/1003822642379374703/1072843873900056666/3rd.png
+![qb-multicharacter]https://cdn.discordapp.com/attachments/1003822642379374703/1072843888680783943/4th.png
 
 <br>
 
