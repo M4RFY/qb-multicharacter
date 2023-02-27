@@ -149,7 +149,7 @@ RegisterNUICallback('cDataPed', function(nData, cb)
                     SetEntityInvincible(charPed, true)
                     PlaceObjectOnGroundProperly(charPed)
                     SetBlockingOfNonTemporaryEvents(charPed, true)
-                    exports['fivem-appearance']:setPedAppearance(charPed, skinData)
+                    exports['illenium-appearance']:setPedAppearance(charPed, skinData)
                 end)
             else
                 CreateThread(function()
