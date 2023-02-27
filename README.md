@@ -4,6 +4,7 @@ Redesign of Original QBCore-Multicharacter.
 # Dependencies
 * [qb-spawn](https://github.com/qbcore-framework/qb-spawn)
 * [qb-core](https://github.com/qbcore-framework/qb-core)
+* [illenium-appearance](https://github.com/iLLeniumStudios/illenium-appearance)
 
 # How to install
 * Download source files from github
